@@ -1,15 +1,18 @@
 import React from "react";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Hackathon from "./pages/hackathon";
+import Workshop from "./pages/Workshop";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Hackathon />} />
-
-      {/* <Route path="/about" element={<About />} /> */}
-      {/* <Route path="/contact" element={<Contact />} /> */}
-    </Routes>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Hackathon />} />
+          <Route path="/please" element={<Workshop />} />
+        </Routes>
+      </Router>
+    </div>
   );
 };
 
