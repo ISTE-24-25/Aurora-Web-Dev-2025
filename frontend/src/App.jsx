@@ -11,6 +11,7 @@ import Home from './pages/Hackathonmain';
 import Workshop from './pages/Workshop';
 import Workpage from "./pages/workpage"
 import Navbar from './components/navbar';
+import PaymentForm from "./components/qrPayment";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path="/hackathon" element={<Hackathon />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/workpage" element={<Workpage />} />
+            <Route path="/qr-payment" element={<PaymentForm />} />
             <Route
               path="/profile"
               element={

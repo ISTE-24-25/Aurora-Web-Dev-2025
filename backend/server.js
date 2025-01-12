@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const userRouter = require("./routes/auth.routes");
 const teamRouter = require("./routes/team.routes");
 const paymentRouter = require("./routes/payment.routes")
+const qrPaymentRouter = require("./routes/qrPayment.routes");
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ mongoose
 app.use("/user", userRouter);
 app.use("/team", teamRouter);
 app.use("/payment", paymentRouter);
+app.use("/api/qr-payment", qrPaymentRouter);
 
 app.get("/", (req, res) => {
   res.send("API is running...");
