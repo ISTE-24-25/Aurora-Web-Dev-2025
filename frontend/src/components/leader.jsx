@@ -8,12 +8,12 @@ const Leader = ({ onClose }) => {
     const [isLeader, setIsLeader] = useState(false);
     const [team, setTeam] = useState(null);
     const [visibility, setVisibility] = useState("");
-    const [description, setDescription] = useState(""); // For the team description
+    const [description, setDescription] = useState(""); 
     const [showPopup, setShowPopup] = useState(false);
     const [showAddMemberPopup, setShowAddMemberPopup] = useState(false);
     const [newMemberEmail, setNewMemberEmail] = useState("");
 
-    const url = "http://localhost:6000";
+    const url = "http://localhost:8000";
 
     const handleAddMember = async () => {
         try {

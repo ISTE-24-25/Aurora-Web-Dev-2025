@@ -6,9 +6,11 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Profile from './pages/Profile';
-import Hackathon from './pages/hackathon';
+import Hackathon from './pages/Hackathon';
 import Home from './pages/Hackathonmain';
 import Navbar from './components/navbar';
+import HackDemo from './pages/HackDemo';
+import Teams from "./components/Teams";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/hackathon" element={<Home />} />
           <Route path="/hackathon-info" element={<Hackathon />} />
+          <Route path="/hackathon-demo" element={<HackDemo />} />
+          <Route path="/hackathon-create" element={<Teams />} />
 
           <Route
             path="/profile"

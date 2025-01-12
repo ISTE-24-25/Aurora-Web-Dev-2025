@@ -1,70 +1,165 @@
 import React, { useState } from "react";
-import CreateTeam from "../components/Teams";
-import PublicTeams from "../components/Public";
-import LeaderLogin from "../components/Leader";
+import Teams from "../components/Teams";
 
-function Hackathon() {
-    const [showCreateTeam, setShowCreateTeam] = useState(false);
-    const [showPublicTeams, setShowPublicTeams] = useState(false);
-    const [showLeaderLogin, setLeaderLogin] = useState(false);
+const TeamManagementPage = () => {
+  const [visibility, setVisibility] = useState("private");
+  const [teamMembers] = useState([
+    { id: 1, name: "John Doe", role: "Leader" },
+    { id: 2, name: "Jane Smith", role: "Member" },
+    { id: 3, name: "Alice Johnson", role: "Member" },
+  ]);
+  const [joinRequests] = useState([
+    { id: 1, email: "abc@gmail.com" },
+    { id: 2, email: "def@gmail.com" },
+  ]);
+  const [publicTeams] = useState([
+    { id: 1, name: "Team Aurora", leader: "Souvik" },
+    { id: 2, name: "Team Orion", leader: "Alex" },
+  ]);
 
-    return (
-        <div className="App h-screen w-screen bg-[#010A1E]">
-            <header className="fixed w-full bg-[#3b1e69] text-white py-4 text-center text-3xl z-10">
-                Aurora presents <span className="text-[#9D31A1]">(Hackathon);</span>
-            </header>
+  const [showTeams, setShowTeams] = useState(false);
 
-            <div className="pt-28 flex flex-col items-center">
-                <div className="w-full h-full space-y-8 px-6 bg-[#010A1E]">
-                    {!showCreateTeam && !showPublicTeams && !showLeaderLogin ? (
-                        <div className="flex flex-col items-center">
-                            <div className="bg-[#c5abf9] p-6 rounded-lg shadow-lg w-full max-w-3xl">
-                                <h2 className="text-2xl font-bold text-[#6932E2]">Team Management</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-                                    <div
-                                        onClick={() => setShowCreateTeam(true)}
-                                        className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-gray-100 hover:scale-105 transition-transform duration-300 ease-out"
-                                    >
-                                        <span className="bg-purple-300 text-purple-800 px-2 py-1 rounded-full text-sm">IDEA</span>
-                                        <h3 className="mt-2 text-xl font-semibold text-black">Create a Team</h3>
-                                        <p className="text-gray-600">
-                                            Bring your vision to life! Click here to assemble a team and start collaborating towards your goals.
-                                        </p>
-                                    </div>
-                                    <div
-                                        onClick={() => setShowPublicTeams(true)}
-                                        className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-gray-100 hover:scale-105 transition-transform duration-300 ease-out"
-                                    >
-                                        <span className="bg-purple-300 text-purple-800 px-2 py-1 rounded-full text-sm">EXPLORE</span>
-                                        <h3 className="mt-2 text-xl font-semibold text-black">View Public Teams</h3>
-                                        <p className="text-gray-600">
-                                            Discover public teams! Click here to explore available teams and find one to join.
-                                        </p>
-                                    </div>
-                                    <div
-                                        onClick={() => setLeaderLogin(true)}
-                                        className="bg-white p-6 rounded-lg shadow-md cursor-pointer hover:bg-gray-100 hover:scale-105 transition-transform duration-300 ease-out"
-                                    >
-                                        <span className="bg-purple-300 text-purple-800 px-2 py-1 rounded-full text-sm">IDEA</span>
-                                        <h3 className="mt-2 text-xl font-semibold text-black">Leader Login</h3>
-                                        <p className="text-gray-600">
-                                            Bring your vision to life! Click here to assemble a team and start collaborating towards your goals.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ) : showCreateTeam ? (
-                        <CreateTeam onClose={() => setShowCreateTeam(false)} />
-                    ) : showPublicTeams ? (
-                        <PublicTeams onClose={() => setShowPublicTeams(false)} />
+  const handleClose = () => {
+    setShowTeams(false);
+  };
+
+  return (
+    <div className="bg-gradient-to-br from-[#1B1033] to-[#451A7A] text-white min-h-screen p-8">
+      <div className="max-w-5xl mx-auto space-y-8">
+        {!showTeams ? (
+          <>
+            <section>
+              <h1 className="text-3xl font-bold mb-6 pt-20">Team Management</h1>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <button
+                  className="bg-gray-100 text-black rounded-lg shadow-md px-6 py-4 hover:bg-gray-200 flex justify-between items-center"
+                  onClick={() => setShowTeams(true)}
+                >
+                  <div>
+                    <h2 className="text-xl font-bold">Create a Team</h2>
+                    <p className="text-sm">
+                      Bring your vision to life! Click here to assemble a team
+                      and start collaborating towards your goals.
+                    </p>
+                  </div>
+                  <div className="w-16 h-16 bg-gray-300 rounded-md"></div>
+                </button>
+                <button
+                  className="bg-gray-100 text-black rounded-lg shadow-md px-6 py-4 hover:bg-gray-200 flex justify-between items-center"
+                  onClick={() => setShowTeams(true)}
+                >
+                  <div>
+                    <h2 className="text-xl font-bold">Join a Team</h2>
+                    <p className="text-sm">
+                      Bring your vision to life! Click here to join a team and
+                      start collaborating towards your goals.
+                    </p>
+                  </div>
+                  <div className="w-16 h-16 bg-gray-300 rounded-md"></div>
+                </button>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Your Team</h2>
+              <div className="flex gap-4 mb-4">
+                <button
+                  className={`px-4 py-2 rounded-lg text-white ${
+                    visibility === "private"
+                      ? "bg-[#6932E2]"
+                      : "bg-gray-600 hover:bg-gray-500"
+                  }`}
+                  onClick={() => setVisibility("private")}
+                >
+                  Private
+                </button>
+                <button
+                  className={`px-4 py-2 rounded-lg text-white ${
+                    visibility === "public"
+                      ? "bg-[#6932E2]"
+                      : "bg-gray-600 hover:bg-gray-500"
+                  }`}
+                  onClick={() => setVisibility("public")}
+                >
+                  Public
+                </button>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {teamMembers.map((member) => (
+                  <div
+                    key={member.id}
+                    className="bg-[#1E1E2E] text-white rounded-xl p-4 flex flex-col items-center gap-4 shadow-md"
+                  >
+                    <div className="w-16 h-16 bg-[#FFFFFF20] rounded-full"></div>
+                    <h3 className="text-lg font-bold">{member.name}</h3>
+                    <p className="text-sm text-gray-400">{member.role}</p>
+                    {member.role === "Leader" ? (
+                      <button className="bg-[#6932E2] text-white px-4 py-2 rounded-lg hover:bg-[#361c6e]">
+                        Leave
+                      </button>
                     ) : (
-                        <LeaderLogin onClose={() => setLeaderLogin(false)} />
+                      <button className="bg-[#6932E2] text-white px-4 py-2 rounded-lg hover:bg-[#361c6e]">
+                        Remove
+                      </button>
                     )}
-                </div>
-            </div>
-        </div>
-    );
-}
+                  </div>
+                ))}
+              </div>
+            </section>
 
-export default Hackathon;
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Join Request</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {joinRequests.map((request) => (
+                  <div
+                    key={request.id}
+                    className="bg-[#1E1E2E] text-white rounded-xl p-4 flex flex-col items-center gap-4 shadow-md"
+                  >
+                    <div className="w-16 h-16 bg-[#FFFFFF20] rounded-full"></div>
+                    <p className="text-sm text-center text-gray-400">
+                      {request.email} would like to join your team.
+                    </p>
+                    <div className="flex gap-2">
+                      <button className="bg-[#6932E2] text-white px-4 py-2 rounded-lg hover:bg-[#361c6e]">
+                        Accept
+                      </button>
+                      <button className="bg-[#6932E2] text-white px-4 py-2 rounded-lg hover:bg-[#361c6e]">
+                        Decline
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-2xl font-bold mb-4">Public Teams</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                {publicTeams.map((team) => (
+                  <div
+                    key={team.id}
+                    className="bg-[#1E1E2E] text-white rounded-xl p-4 flex flex-col items-center gap-4 shadow-md"
+                  >
+                    <div className="w-16 h-16 bg-[#FFFFFF20] rounded-full"></div>
+                    <h3 className="text-lg font-bold">{team.name}</h3>
+                    <p className="text-sm text-gray-400">
+                      Leader: {team.leader}
+                    </p>
+                    <p className="text-sm text-gray-400">Visibility: Public</p>
+                    <button className="bg-[#6932E2] text-white px-4 py-2 rounded-lg hover:bg-[#361c6e]">
+                      Join Team
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </>
+        ) : (
+          <Teams onClose={handleClose} />
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default TeamManagementPage;

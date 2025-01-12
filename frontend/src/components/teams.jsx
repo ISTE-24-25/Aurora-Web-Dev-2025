@@ -10,7 +10,7 @@ const Teams = ({ onClose }) => {
     const [message, setMessage] = useState("");
     const [createdTeam, setCreatedTeam] = useState(null);
     // const url = "https://team-test.onrender.com";
-    const url = "http://localhost:6000";
+    const url = "http://localhost:8000";
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -42,7 +42,7 @@ const Teams = ({ onClose }) => {
     };
 
     return (
-        <div className="w-full h-full flex flex-col items-center justify-center text-white p-8">
+        <div className="w-full h-full flex flex-col items-center justify-center text-white p-8 pt-20">
             <div className="w-full max-w-md bg-[#451A7A] p-6 rounded-lg shadow-lg">
                 <div className="flex justify-between items-center">
                     <h2 className="text-2xl font-bold text-white">Create a Team</h2>
