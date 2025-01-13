@@ -70,6 +70,8 @@ const WorkPage = () => {
           ...prev,
           workshops: data.workshops,
         }));
+
+        alert("Your workshop selections have been successfully submitted!");
       })
       .catch((error) => console.error("Error:", error));
   };
@@ -148,6 +150,7 @@ const WorkPage = () => {
         onClick={handleSubmit}
       >
         Submit
+        
       </div>
     </div>
   );

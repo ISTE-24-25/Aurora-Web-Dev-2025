@@ -75,7 +75,7 @@ export default function Navbar() {
             </div>
             <div
               className="bg-[#9D31A1] text-white px-3 rounded-3xl hover:bg-[#d343d8] cursor-pointer"
-              onClick={() => navigate("/workshop")}
+              onClick={() => navigate("/workpage")}
             >
               <img className="h-5 w-5 inline-block" src={hack} /> Workshop
             </div>
