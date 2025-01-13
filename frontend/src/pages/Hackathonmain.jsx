@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 import CountdownTimer from '../components/Timer';
 import FAQ from '../components/faq';
+import Hackathon from './hackathon';
+import Workshop from './Workshop';
 const image="/aurora_logo.png"
 const teamRules = [
   "Each team can have a minimum of 2 and a maximum of 4 members.",
@@ -78,8 +80,9 @@ const Home = () => {
 
     </div>
 
-   
+   <Workshop/>
     <FAQ/>
+    
     </div>
     </>
   
