@@ -5,7 +5,7 @@ import { useAuth } from '../context/AuthContext';
 
 import LoginBg from '../images/Bg1.png';
 import LoginIcon from '../images/log.png';
-import LoginText from '../images/LOGIN_new.svg';
+import LoginText from '../images/LOGIN.png';
 
 export default function Login() {
     const navigate = useNavigate();
@@ -41,16 +41,16 @@ export default function Login() {
             className="min-h-screen flex flex-col justify-center py-12 sm:px-6 lg:px-8"
         >
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="flex flex-row items-center justify-center space-x-4">
-                    <img
-                        src={LoginText}
-                        alt="Login Text"
-                        className="h-36 w-auto"
-                    />
-                </div>
-            </div>
+    <div className="flex flex-row items-center justify-center space-x-4">
+        <img
+            src={LoginText}
+            alt="Login Text"
+            style={{ height: '50px', width: 'auto',paddingBottom: '15px' }} 
+        />
+    </div>
+</div>
 
-            <div className="mt-6 sm:mx-auto sm:w-full sm:max-w-lg">
+            <div className=" sm:mx-auto sm:w-full sm:max-w-lg">
                 <div
                     className="py-6 px-6 shadow sm:rounded-lg sm:px-10"
                     style={{
@@ -90,34 +90,18 @@ export default function Login() {
                             />
                         </div>
 
-                        <div>
-                            <button
-                                type="submit"
-                                className="w-full flex justify-center py-2 px-5 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                            >
-                                Sign in
-                            </button>
-                        </div>
+                        <div className="mt-6 flex justify-center">
+                        <button
+                            type="submit"
+                            className="w-full sm:w-1/2 py-3 px-5 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-[#040D4C] hover:bg-[#072C5F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+
+                        >
+                            Sign In
+                        </button>
+                    </div>
 
                         <div className="flex flex-col items-center space-y-4 mt-4">
-                            <div className="relative">
-                                <span
-                                    className="px-3 text-white"
-                                    style={{
-                                        backgroundColor: 'rgba(69, 92, 147, 0.7)',
-                                        backdropFilter: 'blur(10px)',
-                                        borderRadius: '8px',
-                                    }}
-                                >
-                                    Don't have an account?{' '}
-                                    <button
-                                        onClick={() => navigate('/register')}
-                                        className="font-medium text-white hover:text-[#040D4C]"
-                                    >
-                                        Register
-                                    </button>
-                                </span>
-                            </div>
+                            
 
                             <div className="relative">
                                 <span
@@ -133,6 +117,24 @@ export default function Login() {
                                         className="font-medium text-white hover:text-[#040D4C]"
                                     >
                                         Forgot Password?
+                                    </button>
+                                </span>
+                            </div>
+                            <div className="relative">
+                                <span
+                                    className="px-3 text-white"
+                                    style={{
+                                        backgroundColor: 'rgba(69, 92, 147, 0.7)',
+                                        backdropFilter: 'blur(10px)',
+                                        borderRadius: '8px',
+                                    }}
+                                >
+                                    Don't have an account?{' '}
+                                    <button
+                                        onClick={() => navigate('/register')}
+                                        className="font-medium text-white hover:text-[#040D4C]"
+                                    >
+                                        Register
                                     </button>
                                 </span>
                             </div>

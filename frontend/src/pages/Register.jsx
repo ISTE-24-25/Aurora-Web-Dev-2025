@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { register } from '../services/auth';
 import toast from 'react-hot-toast';
 import RegisterBg from '../images/Bg2.jpg';
-import SignInText from '../images/Sign_In.svg';
+import SignInText from '../images/SIGN UP.png';
 
 export default function Register() {
     const navigate = useNavigate();
@@ -35,19 +35,20 @@ export default function Register() {
                 backgroundRepeat: 'no-repeat',
                 minHeight: '100vh',
             }}
-            className="flex flex-col justify-center py-12 sm:px-6 lg:px-8"
+            className="flex flex-col justify-center pb-12 sm:px-6 lg:px-8"
         >
-            <div className="sm:mx-auto sm:w-full sm:max-w-md">
-                <div className="flex flex-row items-center justify-center space-x-4">
-                    <img
-                        src={SignInText}
-                        alt="Sign In Text"
-                        className="h-60 w-auto"
-                    />
-                </div>
-            </div>
+            
+                    <div className="flex flex-row items-center justify-center space-x-4">
+                            <img
+                                src={SignInText}
+                                alt="Login Text"
+                                style={{ height: '50px', width: 'auto',paddingBottom: '15px' }} 
+                            />
+                        </div>
+                    
+            
 
-            <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-4xl">
+            <div className="sm:mx-auto sm:w-full sm:max-w-4xl">
                 <div
                     className="py-8 px-4 shadow sm:rounded-lg sm:px-10"
                     style={{
@@ -145,7 +146,8 @@ export default function Register() {
                     <div className="mt-6 flex justify-center">
                         <button
                             type="submit"
-                            className="w-full sm:w-1/2 py-3 px-5 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            className="w-full sm:w-1/2 py-3 px-5 border border-transparent rounded-md shadow-sm text-md font-medium text-white bg-[#040D4C] hover:bg-[#072C5F] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+
                         >
                             Register
                         </button>
