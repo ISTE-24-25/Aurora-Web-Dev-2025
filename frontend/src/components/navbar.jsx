@@ -9,8 +9,8 @@ export default function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <header className="bg-[#040d49] sticky top-0 z-50 w-screen overflow-hidden">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="bg-[#040d49] sticky top-0 z-50 w-full overflow-hidden">
+      <nav className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 mt-2">
             <img className="h-14 w-auto" src={logo} alt="Logo" />
@@ -44,37 +44,43 @@ export default function Navbar() {
 
           <div className="hidden lg:flex space-x-16 mx-auto mt-">
             <div
-              className="text-white hover:text-blue-500 font-medium cursor-pointer"
+              className="text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+              style={{ fontFamily: '"Press Start 2P", serif' }}
               onClick={() => navigate("/home")}
             >
               Home
             </div>
             <div
-              className="text-white hover:text-blue-500 font-medium cursor-pointer"
+              className="text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+              style={{ fontFamily: '"Press Start 2P", serif' }}
               onClick={() => navigate("/speaker")}
             >
               Speaker
             </div>
             <div
-              className="text-white hover:text-blue-500 font-medium cursor-pointer"
+              className="text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+              style={{ fontFamily: '"Press Start 2P", serif' }}
               onClick={() => navigate("/sponsors")}
             >
               Sponsors
             </div>
             <div
-              className="text-white hover:text-blue-500 font-medium cursor-pointer"
+              className="text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+              style={{ fontFamily: '"Press Start 2P", serif' }}
               onClick={() => navigate("/developers")}
             >
               Developers
             </div>
             <div
-              className="bg-[#9D31A1] text-white px-3 rounded-3xl hover:bg-[#d343d8] cursor-pointer"
+              className="bg-[#9D31A1] text-white px-3 rounded-3xl hover:bg-[#d343d8] cursor-pointer text-sm"
+              style={{ fontFamily: '"Press Start 2P", serif' }}
               onClick={() => navigate("/hackathon")}
             >
               <img className="h-5 w-5 inline-block" src={hack} /> Hackathon
             </div>
             <div
-              className="bg-[#9D31A1] text-white px-3 rounded-3xl hover:bg-[#d343d8] cursor-pointer"
+              className="bg-[#9D31A1] text-white px-3 rounded-3xl hover:bg-[#d343d8] cursor-pointer text-sm"
+              style={{ fontFamily: '"Press Start 2P", serif' }}
               onClick={() => navigate("/workshop")}
             >
               <img className="h-5 w-5 inline-block" src={hack} /> Workshop
@@ -92,45 +98,46 @@ export default function Navbar() {
 
         {isMenuOpen && (
           <div className="flex justify-center">
-
-          
-          <div className="lg:hidden w-fit ">
-            <div className="space-y-4 p-4 bg-[#040d49] rounded-md">
-              <div
-                className=" block text-white hover:text-blue-500 font-medium cursor-pointer "
-                onClick={() => navigate("/home")}
-              >
-                Home
-              </div>
-              <div
-                className="block text-white hover:text-blue-500 font-medium cursor-pointer"
-                onClick={() => navigate("/about")}
-              >
-                About
-              </div>
-              <div
-                className="block text-white hover:text-blue-500 font-medium cursor-pointer"
-                onClick={() => navigate("/hackathon")}
-              >
-                Hackathon
-              </div>
-              <div
-                className="block text-white hover:text-blue-500 font-medium cursor-pointer"
-                onClick={() => navigate("/speakers")}
-              >
-                Speakers
-              </div>
-              <div
-                className="w-fit bg-[#9D31A1] rounded-3xl text-white px-4 py-2 hover:bg-[#d343d8]"
-                
-              >
-                <div onClick={()=> navigate("/login")}>
-                Login
+            <div className="lg:hidden w-fit">
+              <div className="space-y-4 p-4 bg-[#040d49] rounded-md overflow-x-hidden">
+                <div
+                  className="block text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+                  style={{ fontFamily: '"Press Start 2P", serif' }}
+                  onClick={() => navigate("/home")}
+                >
+                  Home
                 </div>
-                
+                <div
+                  className="block text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+                  style={{ fontFamily: '"Press Start 2P", serif' }}
+                  onClick={() => navigate("/about")}
+                >
+                  About
+                </div>
+                <div
+                  className="block text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+                  style={{ fontFamily: '"Press Start 2P", serif' }}
+                  onClick={() => navigate("/hackathon")}
+                >
+                  Hackathon
+                </div>
+                <div
+                  className="block text-white hover:text-blue-500 font-medium cursor-pointer text-sm"
+                  style={{ fontFamily: '"Press Start 2P", serif' }}
+                  onClick={() => navigate("/speakers")}
+                >
+                  Speakers
+                </div>
+                <div className="w-fit bg-[#9D31A1] rounded-3xl text-white px-4 py-2 hover:bg-[#d343d8]">
+                  <div
+                    onClick={() => navigate("/login")}
+                    style={{ fontFamily: '"Press Start 2P", serif' }}
+                  >
+                    Login
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         )}
       </nav>
