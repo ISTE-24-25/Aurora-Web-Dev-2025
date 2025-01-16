@@ -8,7 +8,7 @@ import SignInText from '../images/SIGN UP.png';
 
 export default function Register() {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] =   useState({
         fullName: '',
         username: '',
         email: '',
