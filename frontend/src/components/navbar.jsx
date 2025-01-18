@@ -96,7 +96,7 @@ function Navbar() {
                             <img
                             className="h-10 w-auto"
                             src={Work}
-                            alt="Logo"
+                            alt="Workshop"
                         />
                         </a>
                     </div>

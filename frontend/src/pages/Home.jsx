@@ -10,6 +10,7 @@ import InfiniteCarousel from '../components/slider'
 
 const Home = () => {
     return (
+        <>
         <div className="bg-gradient-to-r from-[#0f0d39] to-[#201867]">
             <Hero />
             <CountdownTimer targetDate={new Date("2025-01-23T00:00:00")} />
@@ -26,6 +27,7 @@ const Home = () => {
             <HackathonCard />
 
         </div>
+        </>
     )
 }
 
