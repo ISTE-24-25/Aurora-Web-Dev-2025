@@ -24,7 +24,7 @@ import Teamlogin from './components/teamlogin';
 import TeamManagement from './components/teamlogin2';
 import TeamManagementPage from './pages/HackDemo';
 import CreateTeam from './components/Createteam';
-import Teams from "./components/Teams";
+// import Teams from "./components/Teams";
 import Workpage from "./pages/workpage";
 import Developer from "./pages/Developer";
 import Footer from "./components/Footer";
