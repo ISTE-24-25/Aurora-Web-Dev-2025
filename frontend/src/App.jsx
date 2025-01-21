@@ -41,6 +41,7 @@ import Workshop8 from "./pages/workpage/Workshop8";
 import Workshop9 from "./pages/workpage/Workshop9";
 import Workshop10 from "./pages/workpage/Workshop10";
 import Workshop11 from "./pages/workpage/Workshop11";
+import PaymentForm from "./pages/qrPayment";
 
 function TermsAndConditions() {
   return (
@@ -107,6 +108,7 @@ function App() {
             <Route path="/Workshop9" element={<Workshop9 />} />
             <Route path="/Workshop10" element={<Workshop10 />} />
             <Route path="/Workshop11" element={<Workshop11 />} />
+            <Route path="/qr-payment" element={<PaymentForm />} />
             <Route
               path="/profile"
               element={

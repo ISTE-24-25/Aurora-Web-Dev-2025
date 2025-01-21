@@ -8,6 +8,7 @@ const teamRouter = require("./routes/team.routes");
 const paymentRouter = require("./routes/payment.routes")
 const cashfreeRoutes = require("./routes/payment.routes")
 const bodyParser = require("body-parser");
+const qrPaymentRouter = require("./routes/qrPayment.routes");
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use("/user", userRouter);
 app.use("/team", teamRouter);
 app.use("/payment", paymentRouter);
 app.use("/cashfree", cashfreeRoutes);
+app.use("/qr-payment", qrPaymentRouter);
 
 app.get("/api", (req, res) => {
   res.send("API is running...");

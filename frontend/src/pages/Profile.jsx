@@ -153,7 +153,15 @@ export default function Profile() {
                                 You have Paid!
 
                             </button> 
-                        )}
+                        )
+                        
+                        }
+                        <div className="text-left px-3 py-4 font-press-start text-xs">Alternate Payment Method</div>
+                        <button className="w-full  mt-4 bg-gray-600 px-1 py-3 rounded-full text-white font-heading font-semibold shadow-md transition duration-300 hover:shadow-lg hover:bg-gray-500"
+                        onClick={() => navigate("/qr-payment")}
+                        >
+                            PAY NOW
+                        </button>
                 </div>
                 <p className="px-2 pb-4 text-[0.7rem] text-center">Please reach out to us at <mark>9845780894/8809795723</mark> in case of any issues.</p>
             </div>
